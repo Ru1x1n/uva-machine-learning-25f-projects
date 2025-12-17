@@ -34,6 +34,10 @@ https://www.kaggle.com/datasets/marcosvolpato/edible-and-poisonous-fungi/data
 
 ## Link to our slides 
 https://www.canva.com/design/DAG5ecEw8XE/YwEtQcNrUhZ7R1tbytkU7Q/edit
+
+## Problem/Topic
+Identify whether a mushroom picture is toxic or edible.
+
 ## Project structure
 
 ```text
@@ -56,4 +60,19 @@ https://www.canva.com/design/DAG5ecEw8XE/YwEtQcNrUhZ7R1tbytkU7Q/edit
 
 
 
-``
+```
+## Project Motivation
+There are many mushroom poisoning outbreaks because people can’t tell whether a mushroom is toxic. As a result we were interested in exploring how far a relatively simple convolutional neural network (CNN) or/and MLP can go in performing a task realted to plant species detection. 
+Our motivation is to apply what we have learned in machine learning to address a meaningful real-world challenge. 
+Worldwide, hundreds of people die each year from wild mushroom poisoning, and experts believe the actual number is higher due to underreporting. We think that this is because human visual identification is unreliable. So maybe machines can be trained on thousands of samples and give more accurate results.
+
+## Result Analysis
+Before optimization: simple CNN logic with 3 convolution layers performs a 48% accuracy rate overall.
+![img.png](img.png)
+After optimization: 
+![img_1.png](img_1.png)
+
+
+## Difficulties
+Our model stucks at an accuracy rate of around 60%, which is not very good. Issues: There are biased/ insufficient data sets and an underfitting. The model cannot reach the optimum and we have a great gap between the training set and the testing set. 
+In addition, the testing set is very different from the training set. Maybe that is the problem why we obtain a lower result than we originally expected it to be.
