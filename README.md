@@ -68,9 +68,38 @@ Worldwide, hundreds of people die each year from wild mushroom poisoning, and ex
 
 ## Result Analysis
 Before optimization: simple CNN logic with 3 convolution layers performs a 48% accuracy rate overall.
+Below is the statistics for training data: 
+
+CNN gets about 78% accuracy on 513 images. The data is imbalanced, because there are 376 poisonous and only 137 edible samples, so accuracy can look better than it really is.
+The model is much better at recognizing “poisonous” than “edible”.
+It has 0.88 recall for poisonous, which means it correctly finds most poisonous mushrooms.
 ![img.png](img.png)
-After optimization: 
+
+After optimization: we get to an accuracy rate around 58%. There is improvement but not a lot.
+Below is the statistics for training processes:
+
+The final validation accuracy is 0.9045 (about 90%) on 513 images.
+The confusion matrix:
+105 edible were correctly predicted as edible.
+32 edible were wrongly predicted as poisonous.
+17 poisonous were wrongly predicted as edible.
+359 poisonous were correctly predicted as poisonous.
+
+Note:
+The red dashed line marks the moment when the model changed the training strategy.
+It is at epoch 15 because it decided to start fine-tuning after 15 epochs.
+
+Before epoch 15, the usual setup is:
+MobileNetV2 is used as a fixed feature extractor. The base MobileNetV2 layers are frozen, so their weights do not change.
+And this phase helps the new classifier learn to use the general features that MobileNetV2 already knows.
+After epoch 15, fine-tuning unfreezes some top MobileNetV2 layers. Train again, update the base model weight. 
+By comparing our testing set result and the training set result, we think there maybe a overfitting because the actual accuracy rate is much lower.
 ![img_1.png](img_1.png)
+
+Testing Process: 
+![img_2.png](img_2.png)
+![img_3.png](img_3.png)
+Later on, we adjusted the datasets to add more images to the training set: 
 
 
 ## Difficulties
