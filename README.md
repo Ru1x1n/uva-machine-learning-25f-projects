@@ -24,7 +24,8 @@ step 2: Install dependencies: pip install -r requirements.txt
 
 
 ## Link to the video
-the video link is mentioned in the email.
+ final presentation
+https://youtu.be/5bpg49MUFBY
 
 
 ## Links to our data
