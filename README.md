@@ -73,7 +73,10 @@ Below is the statistics for training data:
 CNN gets about 78% accuracy on 513 images. The data is imbalanced, because there are 376 poisonous and only 137 edible samples, so accuracy can look better than it really is.
 The model is much better at recognizing “poisonous” than “edible”.
 It has 0.88 recall for poisonous, which means it correctly finds most poisonous mushrooms.
+
+
 ![img.png](img.png)
+
 
 After optimization: we get to an accuracy rate around 58%. There is improvement but not a lot.
 Below is the statistics for training processes:
@@ -96,10 +99,17 @@ After epoch 15, fine-tuning unfreezes some top MobileNetV2 layers. Train again, 
 By comparing our testing set result and the training set result, we think there maybe a overfitting because the actual accuracy rate is much lower.
 ![img_1.png](img_1.png)
 
+
 Testing Process: 
+
+
 ![img_2.png](img_2.png)
 ![img_3.png](img_3.png)
-Later on, we adjusted the datasets to add more images to the training set: 
+
+
+Later on, we adjusted the datasets to add more images to the training set: We added an additional data set downloaded from kaggle to the model. Because in the presentation, Prof Qi said there is actually an underfitting, we try to make the model learn over more images to improve the accuracy rates for the testing set.
+Here is the result:
+
 
 
 ## Difficulties
